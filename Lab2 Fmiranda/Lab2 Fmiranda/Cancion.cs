@@ -19,12 +19,12 @@ namespace Lab2_Fmiranda
             artist = Artist;
             genre = Genre;
         }
-        public string Name { get => name; set => name = value; }
+        public string Name { get =>  name; set => name = value; }
         public string Artist { get => artist; set => artist = value; }
         public string Album { get => album; set => album = value; }
         public string Genre { get => genre; set => genre = value; }
 
-        public string Informacion(Cancion cancion)
+        public string Informacion()
         {
             string informacion = "Genero:" + this.Genre + " Artist:" + this.Artist + " Album:" + this.Album + " Name:" + this.Name;
             return informacion;

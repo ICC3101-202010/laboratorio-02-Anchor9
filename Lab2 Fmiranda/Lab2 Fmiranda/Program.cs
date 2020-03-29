@@ -11,13 +11,20 @@ namespace Lab2_Fmiranda
         static void Main(string[] args)
         {
             Cancion C1 = new Cancion("Teenage", "California", "Blink182", "Rock");
+            Cancion C2 = new Cancion("FatLip", "AllKiller", "Sum41", "Punk");
 
-            Console.WriteLine(C1.Informacion(C1));
+            Console.WriteLine(C1.Informacion());
 
             Espotifai espotifai = new Espotifai();
+            List<Cancion> songs = new List<Cancion>();
             
-            espotifai.AgregarCancion(C1);
-            espotifai.VerCanciones();
+
+            Console.WriteLine("AGREGAR");
+            Console.WriteLine(espotifai.AgregarCancion(C1));
+            Console.WriteLine(espotifai.AgregarCancion(C2));
+
+            Console.WriteLine("Mostrar");
+            espotifai.ShowSongs();
 
         }
     }
