@@ -10,6 +10,7 @@ namespace Lab2_Fmiranda
     {
         private List<Cancion> songs;
         private Cancion canciones;
+        
         public Espotifai()
         {
 
@@ -18,29 +19,32 @@ namespace Lab2_Fmiranda
 
         public Cancion Canciones { get => canciones; set => canciones = value; }
 
+        List<Cancion> SongsE = new List<Cancion>();
+
         ////////////////////////////////////////////////////////////////////////
         public bool AgregarCancion(Cancion cancion)
         {
 
             Cancion new_song = cancion;
+            
+            
             string new_info = cancion.Informacion();
-            this.songs = new List<Cancion>();
+            
 
             string new_name = cancion.Name;
             string new_album = cancion.Album;
             string new_artist = cancion.Artist;
             string new_genre = cancion.Genre;
 
-            //foreach (var song in Songs)
-            
-            if (Songs.Contains(new_song))
+            //foreach (Cancion song in Songs)
+            if (SongsE.Contains(new_song))
             {
               return false;
             }
 
-            else if (!Songs.Contains(new_song))
+            else if (!SongsE.Contains(new_song))
             {
-                 Songs.Add(new Cancion(new_name, new_album, new_artist, new_genre));
+                 SongsE.Add(new Cancion(new_name, new_album, new_artist, new_genre));
                  return true;
             }
             return false;
@@ -51,7 +55,7 @@ namespace Lab2_Fmiranda
         public void ShowSongs()
         {
             //this.songs = new List<Cancion>();
-            foreach (var song in Songs)
+            foreach (var song in SongsE)
             {
                 Console.WriteLine(song.Informacion());
             }
@@ -59,10 +63,7 @@ namespace Lab2_Fmiranda
 
         //////////////////////////////////////////////////////////////////////////////////
         public List<Cancion> CancionesPorCriterio(String category, String value)
-        {
-            
-            
-            
+        {           
             List<Cancion> find = new List<Cancion>();
             if (category != "Album" || category != "Name" || category != "Genre" || category != "Artist")
             {
@@ -70,9 +71,7 @@ namespace Lab2_Fmiranda
          
             }
             else
-            {
-
-                
+            {              
                 foreach (var song in Songs)
                 {
                     

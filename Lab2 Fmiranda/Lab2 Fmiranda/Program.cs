@@ -10,6 +10,8 @@ namespace Lab2_Fmiranda
     {
         static void Main(string[] args)
         {
+            Espotifai espotifai = new Espotifai();
+
             // CANCIONES
             Cancion C1 = new Cancion("Teenage", "California", "Blink182", "Rock");
             Cancion C2 = new Cancion("FatLip", "AllKiller", "Sum41", "Punk");
@@ -22,11 +24,12 @@ namespace Lab2_Fmiranda
 
             Console.WriteLine("[1] Show songs");
             Console.WriteLine("[2] Add song");
+            Console.WriteLine("[3] Show songs by category");
             Console.WriteLine("[0] Exit");
 
             string option = Console.ReadLine();
 
-            while (option != "1" && option != "2" && option != "0")
+            while (option != "1" && option != "2" && option != "0" && option != "3")
             {
                 Console.WriteLine("Invalid parameter, re enter again");
                 option = Console.ReadLine();
@@ -44,20 +47,21 @@ namespace Lab2_Fmiranda
             else if (option == "2")
             {
                 //AGREGAR
-                Espotifai espotifai = new Espotifai();
+                
 
                 Console.WriteLine("AGREGAR \n");
                 Console.WriteLine(espotifai.AgregarCancion(C1));
                 Console.WriteLine(espotifai.AgregarCancion(C2));
+                espotifai.ShowSongs();
+
 
             }
             else if (option == "3")
             {
-                //SHOW SONG BY PARAMETER
-                Espotifai espotifai = new Espotifai();
-
-                Console.WriteLine("Show songs by parameter");
-                string parameter = Console.ReadLine();
+                //SHOW SONG BY CATEGORY
+                espotifai.ShowSongs();
+                //Console.WriteLine("Show songs by parameter");
+                //string parameter = Console.ReadLine();
                 
 
             }
