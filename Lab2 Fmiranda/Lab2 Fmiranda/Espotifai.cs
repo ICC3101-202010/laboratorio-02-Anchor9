@@ -8,7 +8,7 @@ namespace Lab2_Fmiranda
 {
     public class Espotifai
     {
-        private List<Cancion> songs;
+        private List<Cancion> songs; // = new List<Cancion>();
         private Cancion canciones;
         
         public Espotifai()

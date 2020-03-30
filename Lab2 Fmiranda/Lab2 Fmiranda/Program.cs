@@ -25,6 +25,8 @@ namespace Lab2_Fmiranda
             Console.WriteLine("[1] Show songs");
             Console.WriteLine("[2] Add song");
             Console.WriteLine("[3] Show songs by category");
+            Console.WriteLine("[4] Crear playlist");
+            Console.WriteLine("[5] Ver mi playlist");
             Console.WriteLine("[0] Exit");
 
             string option = Console.ReadLine();
@@ -39,7 +41,7 @@ namespace Lab2_Fmiranda
 
             if (option == "1")
             {
-                // INFO
+                // INFO ALL SONGS
                 Console.WriteLine(C1.Informacion());
 
             }
@@ -58,6 +60,11 @@ namespace Lab2_Fmiranda
             }
             else if (option == "3")
             {
+                Console.WriteLine("Choose a category");
+                Console.WriteLine("[1] Album \n[2] Genre \n[3] Artist \n[4] Name");
+                Console.WriteLine("Enter value");
+                string value = Console.ReadLine();
+            
                 //SHOW SONG BY CATEGORY
                 espotifai.ShowSongs();
                 //Console.WriteLine("Show songs by parameter");
@@ -66,6 +73,18 @@ namespace Lab2_Fmiranda
 
             }
 
+            else if (option == "4")
+            {
+                //CREATE PLAYLIST
+                
+
+            }
+            else if (option == "5")
+            {
+                //SHOW MY PLAYLIST
+
+
+            }
             else if (option == "0")
             {
                 Console.WriteLine("Thanks");
