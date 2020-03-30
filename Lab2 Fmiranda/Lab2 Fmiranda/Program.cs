@@ -10,22 +10,74 @@ namespace Lab2_Fmiranda
     {
         static void Main(string[] args)
         {
+            // CANCIONES
             Cancion C1 = new Cancion("Teenage", "California", "Blink182", "Rock");
             Cancion C2 = new Cancion("FatLip", "AllKiller", "Sum41", "Punk");
 
-            Console.WriteLine(C1.Informacion());
 
-            Espotifai espotifai = new Espotifai();
-            List<Cancion> songs = new List<Cancion>();
-            
+            //---------------  M  E  N  U  ----------------------------
 
-            Console.WriteLine("AGREGAR");
-            Console.WriteLine(espotifai.AgregarCancion(C1));
-            Console.WriteLine(espotifai.AgregarCancion(C2));
 
-            Console.WriteLine("Mostrar");
-            espotifai.ShowSongs();
+            Console.WriteLine("Welcome to espotifai, choose an option: \n");
+
+            Console.WriteLine("[1] Show songs");
+            Console.WriteLine("[2] Add song");
+            Console.WriteLine("[0] Exit");
+
+            string option = Console.ReadLine();
+
+            while (option != "1" && option != "2" && option != "0")
+            {
+                Console.WriteLine("Invalid parameter, re enter again");
+                option = Console.ReadLine();
+
+            }
+
+
+            if (option == "1")
+            {
+                // INFO
+                Console.WriteLine(C1.Informacion());
+
+            }
+
+            else if (option == "2")
+            {
+                //AGREGAR
+                Espotifai espotifai = new Espotifai();
+
+                Console.WriteLine("AGREGAR \n");
+                Console.WriteLine(espotifai.AgregarCancion(C1));
+                Console.WriteLine(espotifai.AgregarCancion(C2));
+
+            }
+            else if (option == "3")
+            {
+                //SHOW SONG BY PARAMETER
+                Espotifai espotifai = new Espotifai();
+
+                Console.WriteLine("Show songs by parameter");
+                string parameter = Console.ReadLine();
+                
+
+            }
+
+            else if (option == "0")
+            {
+                Console.WriteLine("Thanks");
+
+           
+            }
+
+
+
+
+
+            //MOSTRAR
+            // Console.WriteLine("\nMostrar ");
+            //espotifai.ShowSongs();
 
         }
     }
+    
 }
