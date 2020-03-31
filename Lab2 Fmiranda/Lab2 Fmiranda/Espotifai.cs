@@ -62,28 +62,49 @@ namespace Lab2_Fmiranda
         }
 
         //////////////////////////////////////////////////////////////////////////////////
-        public List<Cancion> CancionesPorCriterio(String category, String value)
-        {           
+        public List<Cancion> CancionesPorCriterio(string category, string value)
+        {
+            
             List<Cancion> find = new List<Cancion>();
-            if (category != "Album" || category != "Name" || category != "Genre" || category != "Artist")
+            if (category != "Album" && category != "Name" && category != "Genre" && category != "Artist")
             {
                 Console.WriteLine("ERROR, invalid parameter");
          
             }
             else
-            {              
-                foreach (var song in Songs)
-                {
-                    
+            {                             
+                    if (category == "Album")
+                    {
+                        foreach (var song in SongsE)
+                        {
+                        find.Add(new Cancion(value, song.Name, song.Artist, song.Genre));
+                        }
+                    }
 
-    
-                }
+                    else if (category == "Name")
+                    {
+                        foreach (var song in SongsE) 
+                        {
+                            find.Add(new Cancion(song.Album, value, song.Artist, song.Genre));
+                        }
+                    }
+                    else if (category == "Genre")
+                    {
+                        foreach (var song in SongsE) 
+                        {
+                            find.Add(new Cancion(song.Album, song.Name, song.Artist, value));
+                        }
+                    }
+                    else if (category == "Artist")
+                    {
+                        foreach (var song in SongsE)
+                        {
+                        find.Add(new Cancion(song.Album, song.Name, value, song.Genre));
 
-
+                        }
+                    }
             }
             return find;
-
-
         }
 
 

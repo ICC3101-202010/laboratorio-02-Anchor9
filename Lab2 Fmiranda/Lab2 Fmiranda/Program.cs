@@ -60,13 +60,16 @@ namespace Lab2_Fmiranda
             }
             else if (option == "3")
             {
-                Console.WriteLine("Choose a category");
-                Console.WriteLine("[1] Album \n[2] Genre \n[3] Artist \n[4] Name");
+                Console.WriteLine("Choose a category \n");
+                Console.WriteLine("Album \nGenre \nArtist \nName");
                 Console.WriteLine("Enter value");
+                string category = Console.ReadLine();
+                Console.WriteLine("Isert value");
                 string value = Console.ReadLine();
+                espotifai.CancionesPorCriterio(category, value);
             
                 //SHOW SONG BY CATEGORY
-                espotifai.ShowSongs();
+                //espotifai.ShowSongs();
                 //Console.WriteLine("Show songs by parameter");
                 //string parameter = Console.ReadLine();
                 

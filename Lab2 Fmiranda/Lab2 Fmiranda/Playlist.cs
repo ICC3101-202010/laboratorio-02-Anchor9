@@ -10,10 +10,11 @@ namespace Lab2_Fmiranda
     {
         private string name;
         private List<Playlist> playlist;
+            
 
-        public Playlist ()
+        public Playlist (string Name)
         {
-
+            name = Name;
 
         }
 
